@@ -4,10 +4,11 @@ import folium as fo
 import pdb
 
 #from csv to pandas dataframe
-surg = open("/Users/lindsaypettingill/Desktop/shoulder.csv")
+surg = open("path_to_csv.csv")
 df = pd.read_csv(surg)
       
-#define start, zoom level, basemap
+#define start, zoom level, basemap- this map is centered in SF
+#i like the toner basemap but there are others to choose from. See https://github.com/wrobstory/folium
 mymap = fo.Map(location=[37.7833, -122.4167], tiles='Stamen Toner',
                    zoom_start=9)
 mymap.create_map(path='shoulder.html')                  
@@ -26,4 +27,3 @@ for x in range(len(df.latitude)):
 		continue
 	mymap.create_map(path='shoulder.html')
 	
-	#more infos at https://github.com/wrobstory/folium
